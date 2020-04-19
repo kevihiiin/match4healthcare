@@ -1,0 +1,22 @@
+{
+	"status": "done",
+	"publicPath": "/static/",
+	"chunks": {
+		"main": [
+			{
+				"name": "main-d135479cd5ca08893781.js",
+				"publicPath": "/static/main-d135479cd5ca08893781.js",
+				"path": "/home/malte/Documents/match4healthcare/frontend/dist/main-d135479cd5ca08893781.js"
+			}
+		],
+		"student": [
+			{
+				"name": "student-d135479cd5ca08893781.js",
+				"publicPath": "/static/student-d135479cd5ca08893781.js",
+				"path": "/home/malte/Documents/match4healthcare/frontend/dist/student-d135479cd5ca08893781.js"
+			}
+		]
+	},
+	"startTime": 1587335214097,
+	"endTime": 1587335214540
+}
