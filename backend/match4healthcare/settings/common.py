@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'apps.ineedstudent',
     'apps.accounts',
     'apps.use_statistics',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +142,7 @@ STATIC_ROOT = os.path.join(RUN_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    os.path.normpath(os.path.join(os.path.join(os.path.dirname(BASE_DIR),'frontend'),'dist')),
 )
 
 from django.contrib.messages import constants as messages

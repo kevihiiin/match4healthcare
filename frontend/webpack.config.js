@@ -34,7 +34,7 @@ module.exports = {
   },
   entry: {
     main: ['./src/main.js'],
-    student: ['./src/student.js']
+    student: ['./src/student.js'],
   },
   output: {
     filename: '[name]-[hash].js',
