@@ -1,14 +1,14 @@
-import { signUpHelper } from "./student/profile.mjs";
+import $ from 'jquery'
+import { ProfileHelper } from './student/ProfileHelper.mjs'
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    let qualifikationSelectors = document.querySelectorAll("div.ausbildung-checkbox input")
+
+document.addEventListener('DOMContentLoaded', function() {
+    let helper = new ProfileHelper()
+    let qualifikationSelectors = document.querySelectorAll('div.ausbildung-checkbox input')
     qualifikationSelectors.forEach(element => {
-        element.addEventListener("change", (event) => { signUpHelper.handleQualificationInput(event) })
-
+        element.addEventListener('change', (event) => helper.handleQualificationInput(event) )
         // To handle Mozillas brilliant idea to keep state of checkboxes on refresh, trigger dummy handler for every checkbox
-        signUpHelper.handleQualificationInput({ srcElement: element });
-
-        $("#id_availability_start").attr("type", "date");
-        
+        helper.handleQualificationInput({ srcElement: element })
     })        
-});
+    $('#id_availability_start').attr('type', 'date')
+})
