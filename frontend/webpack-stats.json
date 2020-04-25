@@ -4,19 +4,26 @@
 	"chunks": {
 		"main": [
 			{
-				"name": "main-d135479cd5ca08893781.js",
-				"publicPath": "/static/main-d135479cd5ca08893781.js",
-				"path": "/home/malte/Documents/match4healthcare/frontend/dist/main-d135479cd5ca08893781.js"
+				"name": "main-672bca1210b44ad09f35.js",
+				"publicPath": "/static/main-672bca1210b44ad09f35.js",
+				"path": "/home/malte/Documents/match4healthcare/frontend/dist/main-672bca1210b44ad09f35.js"
+			}
+		],
+		"map": [
+			{
+				"name": "map-672bca1210b44ad09f35.js",
+				"publicPath": "/static/map-672bca1210b44ad09f35.js",
+				"path": "/home/malte/Documents/match4healthcare/frontend/dist/map-672bca1210b44ad09f35.js"
 			}
 		],
 		"student": [
 			{
-				"name": "student-d135479cd5ca08893781.js",
-				"publicPath": "/static/student-d135479cd5ca08893781.js",
-				"path": "/home/malte/Documents/match4healthcare/frontend/dist/student-d135479cd5ca08893781.js"
+				"name": "student-672bca1210b44ad09f35.js",
+				"publicPath": "/static/student-672bca1210b44ad09f35.js",
+				"path": "/home/malte/Documents/match4healthcare/frontend/dist/student-672bca1210b44ad09f35.js"
 			}
 		]
 	},
-	"startTime": 1587335214097,
-	"endTime": 1587335214540
+	"startTime": 1587775075723,
+	"endTime": 1587775076689
 }
