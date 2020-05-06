@@ -229,7 +229,7 @@ if (
     or (
         "TRAVIS" in os.environ
         and bool(os.environ["TRAVIS"])
-        and os.environ["TRAVIS_PULL_REQUEST_SLUG"] is ["match4everyone/match4healthcare"]
+        and os.environ["TRAVIS_REPO_SLUG"] is ["match4everyone/match4healthcare"]
     )
 ):
     IS_FORK = False
