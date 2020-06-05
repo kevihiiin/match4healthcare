@@ -5,6 +5,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+THIS_ENV = ENVS.PRODUCTION
+
 DEFAULT_LOGGING["handlers"]["console"]["filters"] = []
 
 DEBUG = False
@@ -47,20 +49,7 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 # Use API instead of SMTP server
 use_sendgrid_api = True
 
-if (
-    "TRAVIS" not in os.environ
-    or ("TRAVIS" in os.environ and not bool(os.environ["TRAVIS"]))
-    or (
-        "TRAVIS" in os.environ
-        and bool(os.environ["TRAVIS"])
-        and os.environ["TRAVIS_PULL_REQUEST_SLUG"] is ["match4everyone/match4healthcare"]
-    )
-):
-    NOT_FORK = True
-else:
-    NOT_FORK = False
-
-if NOT_FORK:
+if not IS_FORK:
     if use_sendgrid_api:
         # Using the API
         EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
@@ -81,7 +70,7 @@ else:
     logger.warning(
         "Thanks for forking our repository. Pay attention that Travis CI doesn't test your code "
         "with sendgrid. If you want to use sendgrid for your tests, "
-        "add your repository name to the list in the if statement for NOT_FORK"
+        "add your repository name to the list in the if statement for IS_FORK in common.py"
     )
     EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
     EMAIL_FILE_PATH = os.path.join(RUN_DIR, "sent_emails")

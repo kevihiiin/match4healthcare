@@ -130,6 +130,8 @@ STATIC_ROOT = os.path.join(RUN_DIR, "static")
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
+MAPBOX_TOKEN = os.getenv("MAPBOX_TOKEN")
+
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
@@ -209,3 +211,27 @@ LOGGING = {
         },
     },
 }
+# ========= envs
+class ENVS:
+    DEVELOPMENT = 0
+    PRODUCTION = 1
+
+
+# ========== determine wether this is a forked version of m4h ==========#
+
+IS_TRAVIS = "TRAVIS" in os.environ and bool(os.environ["TRAVIS"])
+
+IS_CI = "CI" in os.environ and bool(os.environ["CI"])
+
+if (
+    "TRAVIS" not in os.environ
+    or ("TRAVIS" in os.environ and not bool(os.environ["TRAVIS"]))
+    or (
+        "TRAVIS" in os.environ
+        and bool(os.environ["TRAVIS"])
+        and os.environ["TRAVIS_PULL_REQUEST_SLUG"] is ["match4everyone/match4healthcare"]
+    )
+):
+    IS_FORK = False
+else:
+    IS_FORK = True
